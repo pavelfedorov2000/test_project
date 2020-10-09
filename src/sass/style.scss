@@ -1,0 +1,47 @@
+@import 'base/vars';
+@import 'base/mixins';
+
+* {
+   box-sizing: inherit;
+    &:before, &:after {
+        box-sizing: inherit;
+    }
+}
+html {
+    box-sizing: border-box;
+}
+body {
+    //font-family: ;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    //max-width: ;
+    margin: 0 auto;
+}
+
+@import 'blocks/header';
+@import 'blocks/main';
+//@import 'blocks/titles';
+//@import 'blocks/buttons';
+//@import 'blocks/benefits';
+//@import 'blocks/form';
+//@import 'blocks/modal';
+//@import 'blocks/slider';
+@import 'blocks/footer';
+//@import 'blocks/pageup';
+
+//@import 'base/media';
