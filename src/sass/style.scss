@@ -117,6 +117,10 @@ main {
     text-transform: uppercase;
     color: #FFFFFF;
     @include btn;
+    transition: .3s all;
+    &:hover {
+        background: $btn-hover;
+    }
 }
 
 .dinners {
