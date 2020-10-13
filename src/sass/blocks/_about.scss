@@ -1,0 +1,17 @@
+.about {
+    padding: 88px 0 95px;
+    &__inner {
+        @include flex;
+    }
+    &__title {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    &__text {
+        max-width: 465px;
+        margin-bottom: 38px;
+    }
+    &__link {
+        padding: 17px 31px;
+    }
+}

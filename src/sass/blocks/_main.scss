@@ -1,3 +1,25 @@
 .main {
-    
+    //min-height: 681px;
+    background: url('../img/main_bg.jpg') center (center/cover) no-repeat;
+    padding: 137px 0 202px;
+    &__inner {
+        max-width: 478px;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 58px;
+        color: #383838;
+        margin-bottom: 19px;
+    }
+    &__text {
+        margin-bottom: 31px;
+    }
+    &__link {
+        padding: 17px 46px;
+    }
+    &:after {
+        content: '';
+        background-image: url('../img/section_bottom-line.svg');
+    }
 }

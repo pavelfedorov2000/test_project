@@ -1,4 +1,462 @@
-//@media (max-width: 1200px);
-//@media (max-width: 991px);
-//@media (max-width: 767px);
-//@media (max-width: 575px);
+@media (max-width: 1300px) {
+    .slider__btn {
+        &_prev {
+            left: -20px;
+        }
+        &_next {
+            right: -20px;
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .header {
+        &__menu-item + &__menu-item {
+            margin-left: 20px;
+        }
+    }
+    .slider {
+        &__btn {
+            &_prev {
+                left: 0px;
+            }
+            &_next {
+                right: 0px;
+            }
+        }
+    }
+}
+@media (max-width: 991px) {
+    .section {
+        &__inner {
+            justify-content: space-around;
+        }
+    }
+    .header {
+        &__top {
+            .container {
+                padding-right: 0;
+            }
+        }
+        &__logo {
+            max-width: 169px;
+        }
+        &__menu {
+            display: none;
+        }
+        &__inst {
+            margin-right: 33px;
+        }
+    }
+    .hamburger {
+        display: flex;
+    }
+    .main {
+        padding-top: 162px;
+        &__title {
+            margin-bottom: 9px;
+        }
+        &__text {
+            max-width: 349px;
+            margin-bottom: 32px;
+        }
+    }
+    .about {
+        padding: 49px 0 91px;
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__content {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 59px;
+        }
+        &__title {
+            text-align: center;
+            margin-bottom: 19px;
+        }
+        &__text {
+            margin: 0 auto;
+            margin-bottom: 46px;
+        }
+        &__img {
+            width: 100%;
+        }
+    }
+    .eco-products {
+        padding-top: 26px;
+        &__all-link {
+            margin-top: 34px;
+        }
+    }
+    .reviews {
+        padding: 43px 0 115px;
+        &__slider {
+            width: 738px;
+            margin: 28px auto 49px;
+        }
+        &__slider-item {
+            padding: 51px 59px 66px 62px;
+        }
+        &__slider-btn {
+            width: 44px;
+            height: 44px;
+            bottom: -14px;
+            &_prev {
+                left: 43%;
+            }
+            &_next {
+                right: 43%;
+            }
+        }
+    }
+    .footer {
+        padding: 40px 0;
+        &__top {
+            padding-bottom: 79px;
+        }
+        &__menu {
+            margin-top: 56px;
+        }
+        &__menu-list {
+            flex-direction: column;
+        }
+        &__menu-listitem {
+            text-align: center;
+            margin-bottom: 18px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__bottom {
+            padding-top: 22px;
+        }
+        &__bottom-left {
+            max-width: 319px;
+        }
+    }
+    .tabs {
+        display: block;
+        overflow-x: scroll;
+        &__item {
+            margin-right: 63px;
+        }
+    }
+    .overflow {
+        display: block;
+        width: 1100px;
+    }
+}
+@media (max-width: 767px) {
+    .reviews {
+        &__slider {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .header {
+        &__phone {
+            font-size: 10px;
+            line-height: 12px;
+        }
+        &__inst {
+            margin-right: 36px;
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+        &__btn {
+            width: 45px;
+            height: 45px;
+            img {
+                width: 14px;
+                height: 14px;
+            }
+        }
+        &__logo {
+            max-width: 161px;
+        }
+    }
+    .hamburger {
+        width: 21px;
+        height: 16px;
+        &__menu {
+            top: 4px;
+            right: 15px;
+            width: 200px;
+            min-height: 277px;
+            padding: 16px 8px 20px;
+        }
+        &__menu-item {
+            padding: 14px 0 12px;
+        }
+        &__menu-link {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        &__dropdown {
+            padding: 0 43px;
+        }
+        &__dropdown-link {
+            font-size: 8px;
+            line-height: 10px;
+        }
+        &_active {
+            height: 3px;
+        }
+    }
+    .main {
+        padding: 53px 0 83px;
+        &__inner {
+            max-width: 167px;
+        }
+        &__title {
+            font-size: 22px;
+            line-height: 26px;
+            margin-bottom: 5px;
+        }
+        &__text {
+            font-size: 10px;
+            line-height: 12px;
+            margin-bottom: 20px;
+        }
+        &__link {
+            padding: 9px 24px 12px 25px;
+        }
+    }
+    .button {
+        font-size: 10px;
+        line-height: 12px;
+    }
+    .section {
+        &__title {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 7px;
+        }
+        &__text {
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+    .dinners {
+        padding: 12px 0 41px;
+    }
+    .menu {
+        padding: 51px 0 70px;
+    }
+    .about {
+        padding: 25px 0 52px;
+        &__content {
+            margin-bottom: 35px;
+        }
+        &__text {
+            font-size: 10px;
+            line-height: 12px;
+            margin-bottom: 25px;
+        }
+        &__link {
+            padding: 11px 18px;
+        }
+    }
+    .product-card {
+        position: relative;
+        width: 140px;
+        min-height: 257px;
+        &__content {
+            padding: 5px 8px 10px;
+        }
+        &__category {
+            font-size: 7px;
+            line-height: 8px;
+            margin-bottom: 2px;
+        }
+        &__title {
+            min-height: 36px;
+            font-size: 10px;
+            line-height: 12px;
+            margin-bottom: 9px;
+        }
+        &__price-weight, &__buttons {
+            @include flex;
+        }
+        &__price-weight {
+            color: #383838;
+            margin-bottom: 7px;
+        }
+        &__weight {
+            font-size: 10px;
+            line-height: 12px;
+        }
+        &__price {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        &__btn-num {
+            font-size: 15px;
+            line-height: 18px;
+        }
+        &__btn-minus, &__btn-plus {
+            font-size: 30px;
+            line-height: 36px;
+        }
+        &__btn-plus {
+            margin-left: 2px;
+        }
+        &__btn {
+            font-size: 8px;
+            line-height: 10px;
+            padding: 7px 4px 10px 5px;
+        }
+        &__only-tuesday {
+            font-size: 10px;
+            line-height: 12px;
+        }
+        &:before, &:after {
+            font-size: 8px;
+            line-height: 10px;
+        }
+        &_new {
+            &:before {
+                padding: 5px 9px;
+            }
+        }
+        &_bestseller {
+            &:before {
+                padding: 5px 13px;
+            }
+        }
+        &_sale {
+            &:before {
+                padding: 4px 13px;
+            }
+        }
+    }
+    
+    .product-card.only-tuesday {
+        .product-card {
+            &__price-weight {
+                margin-bottom: 13px;
+            }
+        }
+    }
+    
+    .product-card.product-card_bestseller.product-card_new {
+        &:after {
+            top: 20px;
+            padding: 5px 9px;
+        }
+    }
+    .reviews {
+        padding: 18px 0 59px;
+        &__slider {
+            padding: 9px 10px 12px;
+            margin: 6px auto 40px;
+        }
+        &__slider-item {
+            font-size: 10px;
+            line-height: 12px;
+            padding: 18px 18px 44px;
+        }
+        &__slider-name {
+            margin-top: 15px;
+        }
+        &__slider-btn {
+            width: 28px;
+            height: 28px;
+            bottom: -14px;
+            img {
+                width: 5px;
+                height: 9px;
+            }
+            &_prev {
+                left: 40%;
+            }
+            &_next {
+                right: 40%;
+            }
+        }
+        &__buttons {
+            width: 100%;
+        }
+        &__btn {
+            padding: 13px 23px 16px 25px;
+            margin: 0;
+            margin-right: 10px;
+        }
+        &__link {
+            padding: 12px 28px 14px 30px;
+            margin-right: 0;
+        }
+        .slick-dots {
+            bottom: 37px;
+        }
+    }
+    .footer {
+        padding: 19px 0;
+        &__top {
+            padding-bottom: 31px;
+        }
+        &__menu {
+            margin: 17px 0 31px;
+        }
+        &__menu-list {
+            flex-direction: column;
+        }
+        &__menu-listitem {
+            font-size: 10px;
+            line-height: 12px;
+            margin-bottom: 11px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__bottom {
+            padding-top: 22px;
+            font-size: 8px;
+        }
+        &__bottom-left {
+            max-width: 111px;
+            line-height: 100.52%;
+        }
+        &__bottom-right {
+            max-width: 125px;
+            line-height: 112.52%;
+        }
+    }
+    .eco-products {
+        padding: 66px 0 71px;
+        &__drop, &__hide {
+            width: 123px;
+            padding: 11px 13px;
+            margin-top: 15px;
+        }
+        &__hide {
+            padding: 11px 31px;
+        }
+        .product-card {
+            //display: none;
+            margin-bottom: 20px;
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+                display: block;
+            }
+        }
+    }
+    .tabs {
+        margin: 25px 0 30px;
+        &__item {
+            font-size: 10px;
+            line-height: 12px;
+            margin-right: 25px;
+        }
+    }
+    .slider {
+        &__item {
+            margin: 0 5px;
+        }
+    }
+}

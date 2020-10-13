@@ -1,0 +1,18 @@
+.slider {
+    position: relative;
+    max-width: 1170px;
+    &__item {
+        margin: 0 15px;
+    }
+    &__btn {
+        @include centerY;
+        background-color: transparent;
+        @include btn;
+        &_prev {
+            left: -59px;
+        }
+        &_next {
+            right: -59px;
+        }
+    }
+}

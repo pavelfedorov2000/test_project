@@ -1,43 +1,82 @@
-$(document).ready(function() {
+$(function(){
 
-    function validateForms(form) {
-        $(form).validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
-                tel: "required",
-                email: {
-                    required: true,
-                    email: true
-                }
-            },
-            messages: {
-                name:  {
-                    required: "Пожалуйста, введите свое имя",
-                    minlength: jQuery.validator.format("Введите {0} cимвола!")
-                },
-                tel: "Пожалуйста, введите свой номер телефона",
-                email: {
-                    required: "Пожалуйста, введите свою почту",
-                    email: "Неправильно введен адрес почты"
-                }
-            }
-        });
-    }
+    // Tabs
+    $('.tabs__item').on('click', function(e){
+        e.preventDefault();
 
-    validateForms('.price__form');
-    validateForms('#consultation form');
+        $($(this).siblings()).removeClass('tabs__item_active');
+        $($(this).closest('.tabs').siblings().find('div')).removeClass('tabs__content_active');
 
+        $(this).addClass('tabs__item_active');
+        $($(this).attr('href')).addClass('tabs__content_active');
 
-    $('input[name=phone]').mask("+375 (99) 999-99-99"); //  маска ввода в инпутах
-
-    $("a[href^='#']").click(function(){
-        const href = $(this).attr("href");
-        $("html, body").animate({scrollTop: $(href).offset().top+"px"}); // плавный скролл по ссылкам
-        return false;
+        $('.slider').slick('setPosition'); // Инициализация слайдера
     });
 
-    new WOW().init(); // для анимации блоков как только пользователь долистывает до их секции
+    // Product slider
+    $('.slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: '<button class="slider__btn slider__btn_prev"><img src="icons/arrows/product-slider/arrow-left.svg" alt=""></button>',
+        nextArrow: '<button class="slider__btn slider__btn_next"><img src="icons/arrows/product-slider/arrow-right.svg" alt=""></button>',
+        responsive: [
+            {
+                breakpoint: 1320,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 1201,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 870,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false,
+                    //centerMode: true,
+                    //centerPadding: '135px',
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false,
+                }
+            }
+        ]
+    });
+    $('.reviews__slider').slick({
+        dots: true,
+        rtl: true,
+        prevArrow: '<button class="reviews__slider-btn reviews__slider-btn_prev"><img src="icons/arrows/reviews-slider/arrow-left.svg" alt=""></button>',
+        nextArrow: '<button class="reviews__slider-btn reviews__slider-btn_next"><img src="icons/arrows/reviews-slider/arrow-right.svg" alt=""></button>',
+    });
+
+    $('.hamburger').on('click', function(){
+        $(this).toggleClass('hamburger_active');
+        $('.overlay').toggleClass('overlay_active');
+        $('.hamburger__menu').toggleClass('hamburger__menu_active');
+    });
+
+    // Dropdown
+    $('.hamburger__menu-link.dropdown').on('click', function(){
+        $(this).toggleClass('hamburger__menu-link_active');
+        $(this).next().slideToggle('200');
+    });
+
+    $('.hamburger__dropdown-item, .hamburger__menu-link.without-drop').on('click', function(){
+        $('.hamburger').removeClass('hamburger_active');
+        $('.overlay').removeClass('overlay_active');
+        $('.hamburger__menu').removeClass('hamburger__menu_active');
+    });
+
+    $('.eco-products__drop').on('click', function(){
+        $(this).toggleClass('eco-products__drop_active');
+        $('.eco-products__more').slideToggle('200');
+    });
 });

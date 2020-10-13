@@ -1,3 +1,219 @@
 .header {
-    
+    box-shadow: 0px 0px 20px rgba(244, 161, 123, 0.18);
+    &__inner {
+        @include flex;
+    }
+    &__top-inner {
+        border-bottom: 0.5px solid #DADADA;
+    }
+    &__phone {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+    }
+    &__icons {
+        display: flex;
+        align-items: center;
+    }
+    &__inst {
+        display: block;
+        margin-right: 36px;
+    }
+    &__buttons {
+        display: flex;
+    }
+    &__btn {
+        width: 62px;
+        height: 62px;
+        @include center;
+        @include btn;
+        &:nth-child(1) {
+            background: #FFCBB4;
+        }
+        &:nth-child(2) {
+            background: #FAB798;
+        }
+        &:nth-child(3) {
+            background: $accent;
+        }
+    }
+    &__bottom {
+        padding: 8px 0 14px;
+    }
+    &__logo {
+        max-width: 184px;
+    }
+    &__menu-list {
+        display: flex;
+    }
+    &__menu-item + &__menu-item {
+        margin-left: 45px;
+    }
+    &__menu-item {
+        position: relative;
+        padding-right: 21px;
+    }
+    &__menu-link {
+        text-transform: uppercase;
+        color: #000000;
+    }
+}
+
+.header__menu-item.dropdown {
+    &:before {
+        content: '';
+        @include centerY;
+        right: 0;
+        width: 13px;
+        height: 7px;
+        background-image: url('../icons/drop.svg');
+        cursor: pointer;
+    }
+    &:hover {
+        .dropdown-menu {
+            opacity: 1;
+        }
+    }
+}
+
+.dropdown-menu {
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    top: 48px;
+    left: -55px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(244, 161, 123, 0.18);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 179px;
+    padding: 27px 14px 17px 15px;
+    transition: .5s all;
+    &__list-item {
+        text-align: center;
+        border-bottom: 0.5px solid #E3E3E3;
+        padding-bottom: 14px;
+        margin-bottom: 12px;
+        transition: .3s all;
+        cursor: pointer;
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        &:hover {
+            font-weight: 500;
+        }
+    }
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 27px;
+    height: 23px;
+    cursor: pointer;
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #000000;
+        transition: .5s all;
+    }
+    &_active {
+        height: 3px;
+        span {
+            &:nth-child(1) {
+                transform: rotate(135deg);
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                transform: rotate(45deg);
+            }
+        }
+    }
+    &__menu {
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        background-color: #FFFFFF;
+        border-radius: 5px;
+        width: 238px;
+        min-height: 362px;
+        padding: 34px 16px 33px 17px;
+        opacity: 0;
+        transition: .5s opacity;
+        &_active {
+            opacity: 1;
+        }
+    }
+    &__menu-item {
+        text-align: center;
+        padding: 18px 0;
+        border-bottom: 0.5px solid #DADADA;
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    }
+    &__menu-link {
+        position: relative;
+        &_active {
+            color: #000000;
+            font-weight: normal;
+        }
+    }
+    &__dropdown {
+        display: none;
+        padding: 0 27.5px;
+        border-top: 0.5px solid #DADADA;
+        margin-top: 18px;
+    }
+    &__dropdown-item {
+        border-bottom: 0.5px solid #E3E3E3;
+        &:first-child {
+            padding: 19px 0 12px;
+        }
+        &:nth-child(2) {
+            padding: 13px 0;
+        }
+        &:nth-child(3) {
+            padding: 12px 0 14px;
+        }
+        &:nth-child(4) {
+            padding: 11px 0 15px;
+        }
+        &:nth-child(5) {
+            padding: 10px 0 16px;
+        }
+        &:last-child {
+            padding-top: 9px;
+            border-bottom: none;
+        }
+    }
+    &__dropdown-link {
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        color: #6B6B6B;
+    }
+}
+
+.hamburger__menu-link.dropdown {
+    &:after {
+        content: '';
+        @include centerY;
+        right: -20px;
+        width: 13px;
+        height: 7px;
+        background-image: url('../icons/drop.svg');
+        cursor: pointer;
+    }
 }

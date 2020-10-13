@@ -29,4 +29,5 @@
 @mixin centerXY {
     @include centerX;
     @include centerY;
+    transform: translate3d(-50%, -50%, 0);
 }

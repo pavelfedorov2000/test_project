@@ -1,0 +1,19 @@
+.tabs {
+    margin: 52px 0 50px;
+    &__item {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: #9E9E9E;
+        cursor: pointer;
+        &_active {
+            color: #000000;
+        }
+    }
+    &__content {
+        display: none;
+        &_active {
+            display: block;
+        }
+    }
+}

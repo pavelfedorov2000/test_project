@@ -1,5 +1,6 @@
 @import 'base/vars';
 @import 'base/mixins';
+@import 'base/fonts';
 
 * {
    box-sizing: inherit;
@@ -7,11 +8,18 @@
         box-sizing: inherit;
     }
 }
+
 html {
     box-sizing: border-box;
 }
+
 body {
-    //font-family: ;
+    font-family: 'Cyntho Next';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -28,20 +36,155 @@ ul, li {
     padding: 0;
 }
 
+button {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
 .container {
-    //max-width: ;
+    max-width: 1200px;
+    padding: 0 15px;
     margin: 0 auto;
+}
+
+main {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.45);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: .5s opacity;
+    &_active {
+        z-index: 100;
+        opacity: 1;
+    }
+}
+
+.section {
+    position: relative;
+    &__title {
+        font-size: 26px;
+        font-weight: normal;
+        line-height: 31px;
+        text-transform: uppercase;
+        color: #383838;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    &__text {
+        text-align: center;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        background-image: url('../img/section_bottom-line--gray.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        height: 80px;
+    }
+}
+
+.button {
+    background: $accent;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    @include btn;
+}
+
+.dinners {
+    padding: 30px 0 152px;
+}
+
+.menu, .eco-products {
+    background-color: $gray-bg;
+    &:after {
+        content: url('../img/section_bottom-line.svg');
+    }
+}
+
+.menu {
+    min-height: 425px;
+    padding: 93px 0 121px;
+}
+
+.eco-products {
+    padding: 130px 0;
+    &__inner {
+        padding-top: 45px;
+    }
+    &__more {
+        display: none;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        visibility: hidden;
+        transition: 1s all;
+        &_active {
+            display: flex;
+            visibility: visible;
+        }
+    }
+    &__drop, &__hide {
+        position: relative;
+        display: block;
+        width: 184px;
+        padding: 17px 25px;
+        margin: 0 auto;
+        margin-top: 28px;
+    }
+    &__hide {
+        display: none;
+        padding: 17px 53px;
+        &_active {
+            display: block;
+        }
+    }
+    &__drop_active {
+        display: none;
+    }
+    .product-card {
+        margin-bottom: 25px;
+    }
+}
+
+.overflow {
+    @include flex;
 }
 
 @import 'blocks/header';
 @import 'blocks/main';
-//@import 'blocks/titles';
-//@import 'blocks/buttons';
-//@import 'blocks/benefits';
-//@import 'blocks/form';
-//@import 'blocks/modal';
-//@import 'blocks/slider';
+@import 'blocks/tabs';
+@import 'blocks/slider';
+@import 'blocks/product-card';
+@import 'blocks/about';
+@import 'blocks/reviews';
 @import 'blocks/footer';
-//@import 'blocks/pageup';
 
-//@import 'base/media';
+@import 'base/media';

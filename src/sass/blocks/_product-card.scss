@@ -1,0 +1,125 @@
+.product-card {
+    position: relative;
+    width: 270px;
+    min-height: 425px;
+    box-shadow: 0px 0px 20px rgba(167, 167, 167, 0.26);
+    border-radius: 5px;
+    margin: 0 auto;
+    &__img {
+        object-fit: cover;
+    }
+    &__content {
+        padding: 16px 15px 13px 17px;
+    }
+    &__category {
+        font-size: 10px;
+        line-height: 12px;
+        color: #5F5F5F;
+        margin-bottom: 5px;
+    }
+    &__title {
+        min-height: 34px;
+        font-weight: normal;
+        margin-bottom: 17px;
+    }
+    &__price-weight, &__buttons {
+        @include flex;
+    }
+    &__price-weight {
+        color: #383838;
+        margin-bottom: 12px;
+    }
+    &__weight {
+        font-weight: normal;
+    }
+    &__price {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    &__btn-num {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 29px;
+        color: #383838;
+    }
+    &__btn-minus, &__btn-plus {
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 41px;
+        color: $accent;
+        background-color: transparent;
+        @include btn;
+    }
+    &__btn-minus {
+        margin-top: -7px;
+        margin-right: 4px;
+    }
+    &__btn-plus {
+        margin-left: 1px;
+    }
+    &__btn {
+        padding: 9px 15px;
+    }
+    &__only-tuesday {
+        display: none;
+        font-weight: normal;
+        color: #DB7F55;
+        text-align: center;
+    }
+    &:before, &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+    }
+    &_new {
+        &:before {
+            content: 'НОВИНКА';
+            background: #8AC9A3;
+            padding: 4px 14px 5px 14px;
+        }
+    }
+    &_bestseller {
+        &:before {
+            content: 'ХИТ';
+            background: #8ABEC9;
+            padding: 4px 16px 5px 14px;
+        }
+    }
+    &_sale {
+        &:before {
+            content: 'АКЦИЯ';
+            background: #F16254;
+            padding: 4px 18px 5px 16px;
+        }
+    }
+}
+
+.product-card.only-tuesday {
+    .product-card {
+        &__buttons {
+            display: none;
+        }
+        &__only-tuesday {
+            display: block;
+        }
+        &__price-weight {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.product-card.product-card_bestseller.product-card_new {
+    &:after {
+        content: 'НОВИНКА';
+        top: 23px;
+        background: #8AC9A3;
+        padding: 4px 14px 5px 14px;
+    }
+}
