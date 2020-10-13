@@ -22,13 +22,6 @@ gulp.task('server', function() {
     gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
-/* gulp.task('html:build', function () {
-    gulp.src('src/*.html')
-        .pipe(rigger())
-        .pipe(gulp.dest('dist/'))
-        .pipe(reload({stream: true}));
-}); */
-
 gulp.task('styles', function() {
     return gulp.src("src/sass/**/*.+(scss|sass)")
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
