@@ -154,6 +154,9 @@
     }
 }
 @media (max-width: 575px) {
+    body {
+        overflow-x: hidden;
+    }
     .header {
         &__phone {
             font-size: 10px;
@@ -262,7 +265,7 @@
     }
     .product-card {
         position: relative;
-        width: 140px;
+        max-width: 140px;
         min-height: 257px;
         &__content {
             padding: 5px 8px 10px;
@@ -436,7 +439,7 @@
             padding: 11px 31px;
         }
         .product-card {
-            //display: none;
+            display: none;
             margin-bottom: 20px;
             &:nth-child(1),
             &:nth-child(2),

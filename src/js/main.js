@@ -10,7 +10,7 @@ $(function(){
         $(this).addClass('tabs__item_active');
         $($(this).attr('href')).addClass('tabs__content_active');
 
-        $('.slider').slick('setPosition'); // Инициализация слайдера
+        //$('.slider').slick('setPosition'); // Инициализация слайдера
     });
 
     // Product slider
@@ -40,7 +40,7 @@ $(function(){
                 }
             },
             {
-                breakpoint: 575,
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 2,
                     arrows: false,
