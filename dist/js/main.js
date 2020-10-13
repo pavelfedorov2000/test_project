@@ -37,8 +37,6 @@ $(function(){
                 settings: {
                     slidesToShow: 2,
                     arrows: false,
-                    //centerMode: true,
-                    //centerPadding: '135px',
                 }
             },
             {
@@ -76,7 +74,14 @@ $(function(){
     });
 
     $('.eco-products__drop').on('click', function(){
-        $(this).toggleClass('eco-products__drop_active');
-        $('.eco-products__more').slideToggle('200');
+        $(this).addClass('eco-products__drop_active');
+        $('.eco-products__hide').addClass('eco-products__hide_active');
+        $('.eco-products__more').addClass('eco-products__more_active');
+    });
+
+    $('.eco-products__hide').on('click', function(){
+        $(this).removeClass('eco-products__hide_active');
+        $('.eco-products__drop').removeClass('eco-products__drop_active');
+        $('.eco-products__more').removeClass('eco-products__more_active');
     });
 });
